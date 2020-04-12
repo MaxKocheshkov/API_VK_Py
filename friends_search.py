@@ -3,8 +3,8 @@ import requests
 
 # Task 1
 
-user_1_id = int(input('Введите id позьзователя 1: '))
-user_2_id = int(input('Введите id позьзователя 2: '))
+user_1_id = int(input('Введите id пользователя 1: '))
+user_2_id = int(input('Введите id пользователя 2: '))
 
 APP_ID = 7406317
 OAUTH_URL = 'https://oauth.vk.com/authorize'
