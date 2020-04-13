@@ -3,8 +3,8 @@ import requests
 
 # Task 1
 
-user_1_id = int(input('Введите id пользователя 1: '))
-user_2_id = int(input('Введите id пользователя 2: '))
+user_1_id = input('Введите id пользователя 1: ')
+user_2_id = input('Введите id пользователя 2: ')
 
 APP_ID = 7406317
 OAUTH_URL = 'https://oauth.vk.com/authorize'
@@ -19,9 +19,10 @@ OAUTH_PARAMS = {
 """
 #Получение ссылки с токеном
 
-# print('?'.join(
-#     (OAUTH_URL, urlencode(OAUTH_PARAMS))
-# ))
+print('?'.join(
+    (OAUTH_URL, urlencode(OAUTH_PARAMS))
+))
+
 """
 
 TOKEN = 'dac755617697cfafa80e7109add6b56b3299aa773e7ff475c0b3eb2a021cbc34b6e3054d8a7ae14dd94bd'
@@ -56,8 +57,30 @@ class User():
         )
         return user_friends.json()
 
+# def mutual():
+#     user1 = User(TOKEN)
+#     user1.user_id = user_1_id 
+#     for value_1 in user1.get_friends().values():
+#         df_1 = value_1['items']
 
-def mutual():
+#     user2 = User(TOKEN)
+#     user2.user_id = user_2_id   
+#     for value_2 in user2.get_friends().values():
+#         df_2 = value_2['items']
+
+#     mutual_fr = []
+#     for i in df_1:
+#          for j in df_2:
+#             if i == j:
+#                 mutual_fr.append(i)
+#                 break
+#     return mutual_fr
+
+# print(mutual())
+
+# Task 2
+
+def mutual_2():
     user1 = User(TOKEN)
     user1.user_id = user_1_id 
     for value_1 in user1.get_friends().values():
@@ -68,12 +91,8 @@ def mutual():
     for value_2 in user2.get_friends().values():
         df_2 = value_2['items']
 
-    mutual_fr = []
-    for i in df_1:
-         for j in df_2:
-            if i == j:
-                mutual_fr.append(i)
-                break
-    return mutual_fr
+    user_1 = set(df_1)
+    user_2 = set(df_2)
+    return user_1 & user_2
 
-print(mutual())
+print(mutual_2())
