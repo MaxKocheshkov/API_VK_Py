@@ -22,10 +22,10 @@ OAUTH_PARAMS = {
 print('?'.join(
     (OAUTH_URL, urlencode(OAUTH_PARAMS))
 ))
-
 """
 
-TOKEN = 'dac755617697cfafa80e7109add6b56b3299aa773e7ff475c0b3eb2a021cbc34b6e3054d8a7ae14dd94bd'
+
+TOKEN = '3f78b09b2616a892a831fb9ede33ef351b78c53441aebc4b188fb7880de022507b9847556fa822aadaf46'
 
 class User():
     def __init__(self, token):
@@ -62,12 +62,12 @@ def mutual():
     user1 = User(TOKEN)
     user1.user_id = user_1_id 
     for value_1 in user1.get_friends().values():
-        df_1 = value_1['items']
-
+        df_1 = value_1.get('items')
+        
     user2 = User(TOKEN)
     user2.user_id = user_2_id   
     for value_2 in user2.get_friends().values():
-        df_2 = value_2['items']
+        df_2 = value_2.get('items')
 
     mutual_fr = []
     for i in df_1:
@@ -83,21 +83,21 @@ print(mutual())
 
 #Task 2
 
-def mutual_2():
-    user1 = User(TOKEN)
-    user1.user_id = user_1_id 
-    for value_1 in user1.get_friends().values():
-        df_1 = value_1['items']
+# def mutual_2():
+#     user1 = User(TOKEN)
+#     user1.user_id = user_1_id 
+#     for value_1 in user1.get_friends().values():
+#         df_1 = value_1['items']
 
-    user2 = User(TOKEN)
-    user2.user_id = user_2_id   
-    for value_2 in user2.get_friends().values():
-        df_2 = value_2['items']
+#     user2 = User(TOKEN)
+#     user2.user_id = user_2_id   
+#     for value_2 in user2.get_friends().values():
+#         df_2 = value_2['items']
 
-    user_1 = set(df_1)
-    user_2 = set(df_2)
-    return user_1 & user_2
+#     user_1 = set(df_1)
+#     user_2 = set(df_2)
+#     return user_1 & user_2
 
-print(mutual_2())
+# print(mutual_2())
 
 
