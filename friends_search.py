@@ -79,25 +79,5 @@ def mutual():
 
 print(mutual())
 
-###############################################################################
-
-#Task 2
-
-# def mutual_2():
-#     user1 = User(TOKEN)
-#     user1.user_id = user_1_id 
-#     for value_1 in user1.get_friends().values():
-#         df_1 = value_1['items']
-
-#     user2 = User(TOKEN)
-#     user2.user_id = user_2_id   
-#     for value_2 in user2.get_friends().values():
-#         df_2 = value_2['items']
-
-#     user_1 = set(df_1)
-#     user_2 = set(df_2)
-#     return user_1 & user_2
-
-# print(mutual_2())
 
 

@@ -24,7 +24,7 @@ print('?'.join(
 ))
 """
 
-TOKEN = '697dc83461d44467c5b4b62c43186652cc3250dfc94a6e8944fc7b40a9ce19efc2c2e47f53a2e405c94ca'
+TOKEN = '097d9cea29d53aac5d2dd50af5d2ead540eb5dc818890a8b63f343ae2e25acb026dc023d49abc554cef35'
 
 class User():
     def __init__(self, token, user_id):
@@ -68,11 +68,12 @@ class User():
             mutal_user_list =  list(set(other_user_fr) & set(other_user_fr_1))
         return mutal_user_list
     
+    def __str__(self):
+        return f'список общих друзей c пользовотелем {self.user_id}: {mutal_user_list}'
+    
 
 user1 = User(TOKEN, user_1_id)
 user2 = User(TOKEN, user_2_id)
 mutal_user_list = user1 & user2
 
-def __str__():
-        return f'список общих друзей пользователей {user_1_id} и {user_2_id}: \n {mutal_user_list} '
-print(__str__())
+print(user2)
